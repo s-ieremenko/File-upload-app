@@ -1,8 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
-import { FileModel } from './file.model';
+import { FileModel, File } from './file.model';
 
-export const getFilesAsAdmin = async (offset: number) => {
-  const files = await FileModel.find().skip(offset).limit(10).exec();
+export const getFilesAsAdmin = async (offset: number): Promise<File[]>=> {
+  const files: File[] = await FileModel.find().skip(offset).limit(10).exec();
   return files;
 };
 
