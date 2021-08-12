@@ -6,7 +6,7 @@ export const checkRole = async (
   res: Response,
   next: () => void
 ): Promise<void> => {
-  const uuid: string = req.params.uuid;
+  const uuid: string = req.query.uuid?.toString() || '';
   try {
     await checkAdmin(uuid);
     next();

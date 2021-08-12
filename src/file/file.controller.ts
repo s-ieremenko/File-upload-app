@@ -34,7 +34,7 @@ export const uploadFile = async (
         path: string;
       } = filedata;
       await uploadFilesAsAdmin(name, mimeType, size, path);
-      res.status(ok).send('File is upload');
+      res.status(ok).send('File is uploaded');
     }
   } catch (error: any) {
     res.status(error.response.status).send(error.response.data);
